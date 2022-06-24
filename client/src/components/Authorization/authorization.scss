@@ -1,0 +1,108 @@
+.authorization_wrapper {
+  width: 400px;
+  height: 500px;
+  border-radius: 5px;
+  background-color: white;
+  -webkit-box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
+  -moz-box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
+  box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
+  display: flex;
+  justify-content: center;
+  .authorization_inside_wrapper {
+    padding: 50px;
+    .authorization_change_password_wrapper {
+      margin-top: 4px;
+      .authorization_change_password {
+        text-decoration: none;
+        font-size: 14px;
+        color: #1d4fff;
+      }
+      :hover {
+        color: #0028bb;
+      }
+    }
+
+    .authorization_inside_wrapper_title {
+      display: flex;
+      justify-content: center;
+      font-size: 36px;
+      color: #000;
+    }
+    .authorization_inside_wrapper_inputs {
+      margin-top: 18px;
+      width: 300px;
+      .authorization_input_login {
+        margin-bottom: 22px;
+      }
+      .authorization_input_title {
+        font-size: 20px;
+      }
+      .authorization_input {
+        input {
+          outline: none;
+          margin-top: 4px;
+          width: auto;
+          height: 30px;
+          width: 280px;
+          padding: 5px 10px;
+          background-color: #c7d3ff;
+          border: 0;
+          font-size: 18px;
+          border-bottom: 1px solid #6083ff;
+        }
+        :focus {
+          box-shadow: 0px 1px 0px #6083ff, 0px -1px 0px #6083ff,
+            1px 0px 0px #6083ff, -1px 0px 0px #6083ff;
+        }
+      }
+    }
+    .authorization_inside_wrapper_buttons {
+      margin-top: 39px;
+      .authorization_button_outline {
+        width: 120px;
+        font-size: 20px;
+        width: 400;
+        margin-right: 30px;
+        height: 40px;
+        border: 1px solid #6083ff;
+        background-color: #fff;
+        transition: 0.5s;
+      }
+      :hover {
+        background-color: rgb(168, 166, 246);
+      }
+      .authorization_button_primary {
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        width: 400;
+        border: 1px solid #6083ff;
+        background-color: #6083ff;
+        color: #fff;
+        transition: 0.5s;
+      }
+      :hover {
+        background-color: rgb(168, 166, 246);
+      }
+    }
+    .authorization_social_buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      .authorization_social_button {
+        width: 50px;
+        height: 50px;
+        border: 0;
+        font-size: 32px;
+      }
+      :hover {
+        cursor: pointer;
+      }
+      .authorization_social_last_item {
+        width: 50px;
+        height: 50px;
+        margin: 0;
+      }
+    }
+  }
+}
