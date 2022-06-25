@@ -3,18 +3,18 @@ import { useDispatch } from 'react-redux';
 
 interface AuthorizationInputProps {
   title: string;
+  handler: () => void;
 }
 
-export const AuthorizationInput = ({ title }: AuthorizationInputProps) => {
-  const dispatch = useDispatch();
-  const handleInput = () => {
-    dispatch({ type: 'CHANGE_LOGIN' });
-  };
+export const AuthorizationInput = ({
+  title,
+  handler,
+}: AuthorizationInputProps) => {
   return (
     <>
       <div className='authorization_input_title'>{title}</div>
       <div className='authorization_input'>
-        <input onChange={() => handleInput()} />
+        <input onChange={() => handler()} />
       </div>
     </>
   );
