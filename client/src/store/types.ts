@@ -31,3 +31,7 @@ export interface initialStateInterface {
   isLoading: boolean;
   errorText?: string;
 }
+export interface AuthorizationInputProps {
+  title: string;
+  handler: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}

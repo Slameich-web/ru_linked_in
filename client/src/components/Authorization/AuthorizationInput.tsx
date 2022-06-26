@@ -1,9 +1,6 @@
 import React from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-interface AuthorizationInputProps {
-  title: string;
-  handler: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+import { AuthorizationInputProps } from '../../store/types';
 
 export const AuthorizationInput = ({
   title,
