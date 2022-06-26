@@ -1,17 +1,25 @@
+.authorization_wrapper_border_error {
+  -webkit-box-shadow: 0px 7px 10px 5px #ff0000;
+  -moz-box-shadow: 0px 7px 10px 5px #ff0000;
+  box-shadow: 0px 7px 10px 5px #ff0000;
+}
+.authorization_wrapper_border {
+  -webkit-box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
+  -moz-box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
+  box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
+}
 .authorization_wrapper {
   width: 400px;
   height: 500px;
   border-radius: 5px;
   background-color: white;
-  -webkit-box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
-  -moz-box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
-  box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
+
   display: flex;
   justify-content: center;
   .authorization_inside_wrapper {
     padding: 50px;
     .authorization_change_password_wrapper {
-      margin-top: 4px;
+      margin-top: 2px;
       .authorization_change_password {
         text-decoration: none;
         font-size: 14px;
@@ -38,22 +46,25 @@
         font-size: 20px;
       }
       .authorization_input {
-        input {
-          outline: none;
-          margin-top: 4px;
-          width: auto;
-          height: 30px;
-          width: 280px;
-          padding: 5px 10px;
-          background-color: #c7d3ff;
-          border: 0;
-          font-size: 18px;
-          border-bottom: 1px solid #6083ff;
-        }
-        :focus {
-          box-shadow: 0px 1px 0px #6083ff, 0px -1px 0px #6083ff,
-            1px 0px 0px #6083ff, -1px 0px 0px #6083ff;
-        }
+        outline: none;
+        margin-top: 4px;
+        width: auto;
+        height: 30px;
+        width: 280px;
+        padding: 5px 10px;
+        background-color: #c7d3ff;
+        border: 0;
+        font-size: 18px;
+      }
+      :focus {
+        box-shadow: 0px 1px 0px #6083ff, 0px -1px 0px #6083ff,
+          1px 0px 0px #6083ff, -1px 0px 0px #6083ff;
+      }
+      .authorization_input_border_error {
+        border-bottom: 2px solid #ff0000;
+      }
+      .authorization_input_border {
+        border-bottom: 2px solid #6083ff;
       }
     }
     .authorization_inside_wrapper_buttons {
@@ -84,6 +95,11 @@
       :hover {
         background-color: rgb(168, 166, 246);
       }
+    }
+    .authorization_error_message {
+      margin-top: 2px;
+      color: #ff0000;
+      font-size: 14px;
     }
     .authorization_social_buttons {
       margin-top: 25px;

@@ -16,7 +16,15 @@ export const loginReducer = (
 ): initialStateInterface => {
   switch (action.type) {
     case LoginActionTypes.ENTER:
-      return { isLogin: true, isLoading: false, error: false };
+      return { ...state, isLogin: true, isLoading: false, error: false };
+    case LoginActionTypes.ENTER_ERROR:
+      return {
+        ...state,
+        isLogin: false,
+        isLoading: false,
+        error: true,
+        errorText: action.payload,
+      };
     case LoginActionTypes.CHANGE_LOGIN:
       return { ...state, login: action.payload };
     case LoginActionTypes.CHANGE_PASSWORD:

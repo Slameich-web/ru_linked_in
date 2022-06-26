@@ -4,6 +4,10 @@ export interface ChangeLoginAction {
   type: LoginActionTypes.CHANGE_LOGIN;
   payload: string;
 }
+export interface EnterErrorAction {
+  type: LoginActionTypes.ENTER_ERROR;
+  payload: string;
+}
 export interface EnterAction {
   type: LoginActionTypes.ENTER;
   payload: string;
@@ -16,7 +20,8 @@ export interface ChangePasswordAction {
 export type LoginAction =
   | ChangePasswordAction
   | EnterAction
-  | ChangeLoginAction;
+  | ChangeLoginAction
+  | EnterErrorAction;
 
 export interface initialStateInterface {
   isLogin: boolean;

@@ -2,4 +2,5 @@ export enum LoginActionTypes {
   ENTER = 'ENTER',
   CHANGE_LOGIN = 'CHANGE_LOGIN',
   CHANGE_PASSWORD = 'CHANGE_PASSWORD',
+  ENTER_ERROR = 'ENTER_ERROR',
 }

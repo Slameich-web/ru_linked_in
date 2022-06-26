@@ -1,14 +1,14 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { initialStateInterface } from '../../main';
+import { useDispatch } from 'react-redux';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
-  const { login, password } = useSelector(
-    (state: initialStateInterface) => state
-  );
-  const checkLogin = (login: string, password: string) => {
-    if (login.length > 0 && password.length > 0) {
-      dispatch({ type: 'LOGIN' });
+  const { login, password } = useTypedSelector((state) => state.login);
+  const checkLogin = () => {
+    if (login === 'Slame' && password === 'QWERTY') {
+      dispatch({ type: 'ENTER' });
+    } else {
+      dispatch({ type: 'ENTER_ERROR', payload: 'ОШИБКА ВХОДА' });
     }
   };
   return (
@@ -16,7 +16,7 @@ export const AuthorizationButtons = () => {
       <div className='authorization_inside_wrapper_buttons'>
         <button
           className='authorization_button_outline'
-          onClick={() => checkLogin(login, password)}
+          onClick={() => checkLogin()}
         >
           Войти
         </button>
