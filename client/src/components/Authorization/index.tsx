@@ -4,6 +4,7 @@ import './authorization.scss';
 import { AuthorizationButtons } from './AuthorizationButtons';
 import { AuthorizationInputs } from './AuthorizationInputs';
 import { AuthorizationSocialButtons } from './AuthorizationSocialButtons';
+
 export const Authorization: FC = () => {
   const { error } = useTypedSelector((state) => state.login);
   return (

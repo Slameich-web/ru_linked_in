@@ -68,16 +68,23 @@
       }
     }
     .authorization_inside_wrapper_buttons {
+      display: flex;
+      justify-content: space-between;
+
+      .authorization_button_link {
+        text-decoration: none;
+        cursor: pointer;
+      }
       margin-top: 39px;
       .authorization_button_outline {
         width: 120px;
         font-size: 20px;
         width: 400;
-        margin-right: 30px;
         height: 40px;
         border: 1px solid #6083ff;
         background-color: #fff;
         transition: 0.5s;
+        cursor: pointer;
       }
       :hover {
         background-color: rgb(168, 166, 246);
@@ -90,6 +97,7 @@
         border: 1px solid #6083ff;
         background-color: #6083ff;
         color: #fff;
+        cursor: pointer;
         transition: 0.5s;
       }
       :hover {

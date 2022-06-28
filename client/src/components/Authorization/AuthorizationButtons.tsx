@@ -1,6 +1,8 @@
 import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { Registration } from '../Registration';
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
   const { login, password } = useTypedSelector((state) => state.login);
@@ -20,7 +22,9 @@ export const AuthorizationButtons = () => {
         >
           Войти
         </button>
-        <button className='authorization_button_primary'>Регистрация</button>
+        <Link className='authorization_button_link' to='/registration'>
+          <button className='authorization_button_primary'>Регистрация</button>
+        </Link>
       </div>
     </div>
   );
