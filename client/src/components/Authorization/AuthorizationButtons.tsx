@@ -1,25 +1,27 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { Registration } from '../Registration';
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
   const { login, password } = useTypedSelector((state) => state.login);
+  const navigate = useNavigate();
   const checkLogin = () => {
-    if (login === 'Slame' && password === 'QWERTY') {
-      dispatch({ type: 'ENTER' });
-    } else {
-      dispatch({ type: 'ENTER_ERROR', payload: 'ОШИБКА ВХОДА' });
-    }
+    return async () => {
+      setTimeout(() => {
+        if (login === 'Slame' && password === 'QWERTY') {
+          dispatch({ type: 'ENTER' });
+          navigate('/profile_page');
+        } else {
+          dispatch({ type: 'ENTER_ERROR', payload: 'ОШИБКА ВХОДА' });
+        }
+      }, 500);
+    };
   };
   return (
     <div>
       <div className='authorization_inside_wrapper_buttons'>
-        <button
-          className='authorization_button_outline'
-          onClick={() => checkLogin()}
-        >
+        <button className='authorization_button_outline' onClick={checkLogin()}>
           Войти
         </button>
         <Link className='authorization_button_link' to='/registration'>

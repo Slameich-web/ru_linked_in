@@ -5,6 +5,7 @@ import { AuthorizationInputProps } from '../../store/types';
 export const AuthorizationInput = ({
   title,
   handler,
+  type,
 }: AuthorizationInputProps) => {
   const { error } = useTypedSelector((state) => state.login);
   return (
@@ -12,6 +13,7 @@ export const AuthorizationInput = ({
       <div className='authorization_input_title'>{title}</div>
       <div>
         <input
+          type={type}
           className={`authorization_input ${
             error
               ? 'authorization_input_border_error'

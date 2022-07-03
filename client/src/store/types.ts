@@ -33,5 +33,6 @@ export interface initialStateInterface {
 }
 export interface AuthorizationInputProps {
   title: string;
+  type?: string;
   handler: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

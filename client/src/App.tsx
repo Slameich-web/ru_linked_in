@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Authorization } from './components/Authorization';
 import { ProfilePage } from './components/ProfilePage';
 import { RecoverPassword } from './components/RecoverPassword';

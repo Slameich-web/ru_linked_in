@@ -18,7 +18,11 @@ export const AuthorizationInputs = () => {
         <AuthorizationInput title='Email' handler={handleInputLogin} />
       </div>
       <div className='authorization_input_password'>
-        <AuthorizationInput title='Пароль' handler={handleInputPassword} />
+        <AuthorizationInput
+          type='password'
+          title='Пароль'
+          handler={handleInputPassword}
+        />
         <AuthorizationErrorMessage />
         <AuthorizationChangePassword />
       </div>
