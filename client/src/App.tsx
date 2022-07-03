@@ -4,7 +4,6 @@ import { Authorization } from './components/Authorization';
 import { ProfilePage } from './components/ProfilePage';
 import { RecoverPassword } from './components/RecoverPassword';
 import { Registration } from './components/Registration';
-import { useTypedSelector } from './hooks/useTypedSelector';
 
 const App = () => {
   return (

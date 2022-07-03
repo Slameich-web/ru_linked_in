@@ -12,6 +12,10 @@ export interface EnterAction {
   type: LoginActionTypes.ENTER;
   payload: string;
 }
+export interface LoginLoading {
+  type: LoginActionTypes.LOGIN_LOADING;
+  payload: boolean;
+}
 
 export interface ChangePasswordAction {
   type: LoginActionTypes.CHANGE_PASSWORD;
@@ -21,6 +25,7 @@ export type LoginAction =
   | ChangePasswordAction
   | EnterAction
   | ChangeLoginAction
+  | LoginLoading
   | EnterErrorAction;
 
 export interface initialStateInterface {
