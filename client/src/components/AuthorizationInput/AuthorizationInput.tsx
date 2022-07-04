@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { AuthorizationInputProps } from '../../store/types';
-
+import './AuthorizationInput.scss';
 export const AuthorizationInput = ({
   title,
   handler,
@@ -9,7 +9,7 @@ export const AuthorizationInput = ({
 }: AuthorizationInputProps) => {
   const { error } = useTypedSelector((state) => state.login);
   return (
-    <>
+    <div className='authorization_input_wrapper'>
       <div className='authorization_input_title'>{title}</div>
       <div>
         <input
@@ -22,6 +22,6 @@ export const AuthorizationInput = ({
           onChange={(e) => handler(e)}
         />
       </div>
-    </>
+    </div>
   );
 };

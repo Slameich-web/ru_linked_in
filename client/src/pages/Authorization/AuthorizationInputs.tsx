@@ -6,7 +6,7 @@ import {
 } from '../../store/reducers/loginReducer';
 import { AuthorizationChangePassword } from './AuthorizationChangePassword';
 import { AuthorizationErrorMessage } from './AuthorizationErrorMessage';
-import { AuthorizationInput } from './AuthorizationInput';
+import { AuthorizationInput } from '../../components/AuthorizationInput/AuthorizationInput';
 
 export const AuthorizationInputs = () => {
   const dispatch = useDispatch();

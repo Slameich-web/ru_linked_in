@@ -1,0 +1,26 @@
+.authorization_input_wrapper {
+  .authorization_input_title {
+    font-size: 20px;
+  }
+  .authorization_input {
+    outline: none;
+    margin-top: 4px;
+    width: auto;
+    height: 30px;
+    width: 280px;
+    padding: 5px 10px;
+    background-color: #c7d3ff;
+    border: 0;
+    font-size: 18px;
+  }
+  :focus {
+    box-shadow: 0px 1px 0px #6083ff, 0px -1px 0px #6083ff, 1px 0px 0px #6083ff,
+      -1px 0px 0px #6083ff;
+  }
+  .authorization_input_border_error {
+    border-bottom: 2px solid #ff0000;
+  }
+  .authorization_input_border {
+    border-bottom: 2px solid #6083ff;
+  }
+}

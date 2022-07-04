@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Authorization } from './components/Authorization';
-import { ProfilePage } from './components/ProfilePage';
-import { RecoverPassword } from './components/RecoverPassword';
-import { Registration } from './components/Registration';
+import { Authorization } from './pages/Authorization';
+import { ProfilePage } from './pages/ProfilePage';
+import { RecoverPassword } from './pages/RecoverPassword';
+import { Registration } from './pages/Registration';
 
 const App = () => {
   return (
