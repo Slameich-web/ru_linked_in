@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  LogininputChange,
-  passwordinputChange,
-} from '../../store/reducers/loginReducer';
 import { AuthorizationChangePassword } from './AuthorizationChangePassword';
 import { AuthorizationErrorMessage } from './AuthorizationErrorMessage';
 import { AuthorizationInput } from '../../components/AuthorizationInput/AuthorizationInput';
+import {
+  LogininputChange,
+  passwordinputChange,
+} from '../../store/reducers/loginActions';
 
 export const AuthorizationInputs = () => {
   const dispatch = useDispatch();

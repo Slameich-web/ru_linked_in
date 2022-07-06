@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { ChangeIsLoading, LoginError } from '../../store/reducers/loginReducer';
+import { ChangeIsLoading, LoginError } from '../../store/reducers/loginActions';
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
   const { login, password, isLoading } = useTypedSelector(
