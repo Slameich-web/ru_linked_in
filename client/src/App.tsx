@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './components/Layout';
 import { Authorization } from './pages/Authorization';
 import { ProfilePage } from './pages/ProfilePage';
 import { RecoverPassword } from './pages/RecoverPassword';
@@ -12,7 +13,10 @@ const App = () => {
         <Route path='/registration' element={<Registration />} />
         <Route path='/authorization' element={<Authorization />} />
         <Route path='/recover_password' element={<RecoverPassword />} />
-        <Route path='/profile_page' element={<ProfilePage />} />
+        <Route path='/' element={<Layout />}>
+          <Route path='/profile_page' element={<ProfilePage />} />
+          <Route path='*' element={<ProfilePage />} />
+        </Route>
       </Routes>
     </div>
   );
