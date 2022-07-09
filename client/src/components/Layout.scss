@@ -1,3 +1,19 @@
-.active {
-  color: red;
+.active_custom_link {
+  color: blue;
+}
+.custom_link {
+  width: fit-content;
+}
+.layout_wrapper {
+  width: 1000px;
+  display: grid;
+  grid-template-rows: 60px 1fr 120px;
+  .layout_wrapper_main {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    .layout_wrapper_nav {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
