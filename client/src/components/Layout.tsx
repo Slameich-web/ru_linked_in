@@ -14,7 +14,13 @@ export const Layout = () => {
         </nav>
         <Outlet />
       </div>
-      <footer>Footer</footer>
+      <footer className='footer'>
+        <a href='#'>Home</a>
+        <a href='#'>Faq</a>
+        <a href='#'>About</a>
+        <a href='#'>Blog</a>
+        <a href='#'>Contact</a>
+      </footer>
     </div>
   );
 };

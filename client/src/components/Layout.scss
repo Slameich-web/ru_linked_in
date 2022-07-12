@@ -1,5 +1,5 @@
 .active_custom_link {
-  color: blue;
+  color: #6083ff;
 }
 .custom_link {
   width: fit-content;
@@ -7,7 +7,7 @@
 .layout_wrapper {
   width: 1000px;
   display: grid;
-  grid-template-rows: 60px 1fr 120px;
+  grid-template-rows: 60px 1fr 50px;
   .layout_wrapper_main {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -15,5 +15,20 @@
       display: flex;
       flex-direction: column;
     }
+  }
+}
+.footer {
+  width: 100%;
+  max-width: 1000px;
+  height: 50px;
+  background: #6083ff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-content: center;
+  justify-items: center;
+
+  a {
+    color: #ffffff;
+    cursor: pointer;
   }
 }
