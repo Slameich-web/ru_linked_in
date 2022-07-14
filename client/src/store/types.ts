@@ -21,18 +21,24 @@ export interface ChangePasswordAction {
   type: LoginActionTypes.CHANGE_PASSWORD;
   payload: string;
 }
+export interface ChangeEmailAction {
+  type: LoginActionTypes.CHANGE_EMAIL;
+  payload: string;
+}
 export type LoginAction =
   | ChangePasswordAction
   | EnterAction
   | ChangeLoginAction
   | LoginLoading
-  | EnterErrorAction;
+  | EnterErrorAction
+  | ChangeEmailAction;
 
 export interface initialStateInterface {
   isLogin: boolean;
   login?: string;
   password?: string;
   error: boolean;
+  email: string;
   isLoading: boolean;
   errorText?: string;
 }

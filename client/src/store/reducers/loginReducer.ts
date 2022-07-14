@@ -3,6 +3,7 @@ import { LoginActionTypes } from '../variables';
 
 const initialState: initialStateInterface = {
   isLogin: false,
+  email: '',
   login: '',
   password: '',
   error: false,
@@ -31,6 +32,8 @@ export const loginReducer = (
       return { ...state, password: action.payload };
     case LoginActionTypes.LOGIN_LOADING:
       return { ...state, isLoading: action.payload };
+    case LoginActionTypes.CHANGE_EMAIL:
+      return { ...state, email: action.payload };
     default:
       return state;
   }
