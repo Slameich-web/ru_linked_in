@@ -49,10 +49,15 @@ export const Registration = () => {
           <AuthorizationInput title='Логин' handler={handleInputLogin} />
         </div>
         <div className='registration_input_wrapper'>
-          <AuthorizationInput title='Пароль' handler={handleInputPassword} />
+          <AuthorizationInput
+            type='password'
+            title='Пароль'
+            handler={handleInputPassword}
+          />
         </div>
         <div className='registration_input_wrapper'>
           <AuthorizationInput
+            type='password'
             title='Повторите пароль'
             handler={handleRepeatePassword}
           />

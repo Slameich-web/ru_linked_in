@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import './authorization.scss';
 import { AuthorizationButtons } from './AuthorizationButtons';
@@ -7,6 +8,9 @@ import { AuthorizationSocialButtons } from './AuthorizationSocialButtons';
 
 export const Authorization: FC = () => {
   const { error } = useTypedSelector((state) => state.login);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const fromPage = location?.state || '/';
   return (
     <div
       className={`authorization_wrapper ${

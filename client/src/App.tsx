@@ -6,6 +6,7 @@ import { ProfilePage } from './pages/ProfilePage';
 import { RecoverPassword } from './pages/RecoverPassword';
 import { Registration } from './pages/Registration';
 import { StartPage } from './pages/StartPage';
+import { RequireAuth } from './hoc/RequireAuth';
 
 const App = () => {
   return (
@@ -16,9 +17,30 @@ const App = () => {
         <Route path='/recover_password' element={<RecoverPassword />} />
         <Route path='/start_page' element={<StartPage />} />
         <Route path='/' element={<Layout />}>
-          <Route path='/profile_page' element={<ProfilePage />} />
-          <Route path='/profile_page/:id' element={<ProfilePage />} />
-          <Route path='*' element={<ProfilePage />} />
+          <Route
+            path='/profile_page'
+            element={
+              <RequireAuth>
+                <ProfilePage />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='/profile_page/:id'
+            element={
+              <RequireAuth>
+                <ProfilePage />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='*'
+            element={
+              <RequireAuth>
+                <ProfilePage />
+              </RequireAuth>
+            }
+          />
         </Route>
       </Routes>
     </div>
