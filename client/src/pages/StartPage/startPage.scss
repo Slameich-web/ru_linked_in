@@ -1,0 +1,49 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerStick {
+  display: flex;
+  width: 10px;
+  background-color: black;
+  height: 30px;
+}
+
+.secondPageStick {
+  display: flex;
+  width: 10px;
+  background-color: black;
+  height: 30px;
+}
+
+.firstPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thirdPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thirdPage .verticalStick {
+  display: flex;
+  width: 100px;
+  background-color: black;
+  height: 15px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
