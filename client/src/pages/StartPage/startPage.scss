@@ -65,6 +65,8 @@ button {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
   background-image: url(./img/group-of-young-business-people-working-in-the-office.jpg);
   background-size: 100%;
 }

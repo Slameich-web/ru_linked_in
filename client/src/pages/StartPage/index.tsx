@@ -7,7 +7,7 @@ export const StartPage = () => {
       <header className='headerStart'>
         <span className='logo'>ЛинкедИн для пацанов</span>
         <span className='headerStick'></span>
-        <button className='logSign'>Войти/Регистрация</button>
+        <button className='logSign'>Войти / Регистрация</button>
       </header>
       <div className='bodyStart'>
         <div className='firstPage'>
