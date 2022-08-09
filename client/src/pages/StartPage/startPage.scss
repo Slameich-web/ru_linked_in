@@ -1,49 +1,192 @@
-header {
+.headerStart {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.headerStick {
-  display: flex;
-  width: 10px;
-  background-color: black;
-  height: 30px;
+  justify-content: space-between;
+  width: 100%;
+  height: 2%; //your desired height
+  background-color: rgb(85, 126, 188);
+  // box-shadow: 10px 10px 10px 10px rgb(44, 44, 45);
+  border-bottom: 3px;
+  border-color: black;
+  min-height: 80px;
+  min-width: 1500px;
 }
 
-.secondPageStick {
+.headerStick {
   display: flex;
-  width: 10px;
-  background-color: black;
-  height: 30px;
+  width: 5px;
+  background-color: rgb(240, 234, 234);
+  height: 100%;
+  margin-left: 700px;
+  margin-right: 15px;
+  box-shadow: 1px 1px 2px rgb(53, 54, 54);
+  min-width: 5px;
+}
+
+.logo {
+  display: flex;
+  color: aliceblue;
+  text-shadow: 1px 1px 2px rgb(53, 54, 54);
+  align-items: center;
+  width: 400px;
+  justify-content: center;
+  margin-bottom: 5px;
+  font-size: large;
+  margin-left: 5px;
+}
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.logSign {
+  display: flex;
+  border-radius: 100px;
+  height: 50px;
+  width: 400px;
+  background: aliceblue;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-right: 5px;
+  box-shadow: 1px 1px 2px rgb(53, 54, 54);
+  font-size: large;
+  cursor: pointer;
+}
+
+.bodyStart {
+  width: 100%;
+  min-width: 1500px;
 }
 
 .firstPage {
+  width: 100%;
+  height: 800px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  background-image: url(./img/group-of-young-business-people-working-in-the-office.jpg);
+  background-size: 100%;
+}
+
+.firstPage span {
+  display: flex;
+  color: aliceblue;
+  text-shadow: 1px 1px 2px rgb(53, 54, 54);
+  font-size: 30px;
+}
+
+input {
+  padding: 0;
+  border: none;
+  background: none;
+}
+.searchBar {
+  display: flex;
+  border-radius: 50px;
+  border-color: black;
+  background-color: rgb(210, 220, 235);
+  height: 50px;
+  width: 300px;
+  color: rgb(33, 33, 33);
+  box-shadow: 1px 1px 2px rgb(53, 54, 54);
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  text-align: center;
+  color: rgb(33, 33, 33);
+  font-size: large;
 }
 
 .secondPage {
+  width: 100%;
+  height: 800px;
+  // margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  background-color: rgb(85, 126, 188);
+}
+
+.secondPageText {
+  color: aliceblue;
+  text-shadow: 1px 1px 2px rgb(53, 54, 54);
+  font-size: 30px;
+}
+.secondPageStick {
+  display: flex;
+  width: 5px;
+  background-color: rgb(240, 234, 234);
+  height: 500px;
+  box-shadow: 1px 1px 2px rgb(53, 54, 54);
 }
 
 .thirdPage {
   display: flex;
+  // margin-top: 20px;
+  width: 100%;
+  height: 800px;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-image: url('./img/side-view-of-cropped-unrecognizable-business-people-working-at-common-desk.jpg');
+  background-size: 100%;
 }
 
 .thirdPage .verticalStick {
   display: flex;
-  width: 100px;
-  background-color: black;
-  height: 15px;
+  width: 500px;
+  background-color: rgb(240, 234, 234);
+  height: 5px;
+  box-shadow: 1px 1px 2px rgb(53, 54, 54);
 }
 
-footer {
+.thirdPage span {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: aliceblue;
+  text-shadow: 1px 1px 2px rgb(53, 54, 54);
+  font-size: 30px;
+}
+.submitVacationButton {
   display: flex;
+  border-radius: 50px;
+  border-color: black;
+  background-color: rgb(210, 220, 235);
+  height: 50px;
+  width: 300px;
+  color: rgb(33, 33, 33);
+  box-shadow: 1px 1px 2px rgb(53, 54, 54);
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  text-align: center;
+  cursor: pointer;
+}
+.footerStart {
+  display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
+
+  width: 100%;
+  height: 500px; //your desired height
+  top: 0;
+  left: 0;
+  background-color: rgb(85, 126, 188);
+  min-height: 80px;
+  min-width: 1500px;
+}
+
+.footerStart span {
+  color: aliceblue;
+  margin-top: 20px;
+  text-shadow: 1px 1px 2px rgb(53, 54, 54);
+  font-size: 30px;
 }

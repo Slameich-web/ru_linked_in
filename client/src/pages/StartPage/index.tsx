@@ -4,19 +4,21 @@ import './startPage.scss';
 export const StartPage = () => {
   return (
     <div>
-      <header className='header'>
+      <header className='headerStart'>
         <span className='logo'>ЛинкедИн для пацанов</span>
         <span className='headerStick'></span>
-        <span className='logSign'>Войти/Регистрация</span>
+        <button className='logSign'>Войти/Регистрация</button>
       </header>
-      <body className='body'>
+      <div className='bodyStart'>
         <div className='firstPage'>
           <span>Найдите вакансии от лучших компаний</span>
           {''}
           <input className='searchBar' placeholder='Найти Вакансию'></input>
         </div>
         <div className='secondPage'>
-          <span>Размести свою вакансию и найди специалистов</span>
+          <span className='secondPageText'>
+            Размести свою вакансию и найди специалистов
+          </span>
           {''}
           <span className='secondPageStick'></span>
           {''}
@@ -30,8 +32,10 @@ export const StartPage = () => {
             опытом
           </span>
         </div>
-        <footer>Данный сайт был сделан только ради денег</footer>
-      </body>
+        <footer className='footerStart'>
+          <span>Данный сайт был сделан только ради денег</span>
+        </footer>
+      </div>
     </div>
   );
 };
