@@ -28,3 +28,39 @@
   text-shadow: 1px 1px 2px rgb(53, 54, 54);
   font-size: 30px;
 }
+
+@media (max-width: 900px) {
+  .third_page {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    background-image: url('./img/side-view-of-cropped-unrecognizable-business-people-working-at-common-desk.jpg');
+    background-size: 100%;
+  }
+
+  .third_page .vertical_stick {
+    display: flex;
+    width: 200px;
+    background-color: rgb(240, 234, 234);
+    height: 3px;
+    box-shadow: 1px 1px 2px rgb(53, 54, 54);
+  }
+
+  .third_page span {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: aliceblue;
+    text-shadow: 1px 1px 2px rgb(53, 54, 54);
+    font-size: 10px;
+  }
+
+  .bottom_text {
+    text-align: center;
+  }
+}

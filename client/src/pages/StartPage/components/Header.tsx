@@ -7,7 +7,6 @@ export const Header = () => {
   return (
     <div className='header_start'>
       <span className='logo'>ЛинкедИн для пацанов</span>
-      <span className='header_stick'></span>
       <Link to='Authorization' className='Link'>
         <button className='logSign'>Войти / Регистрация</button>
       </Link>
