@@ -5,6 +5,7 @@ import { User } from './users/users.model';
 import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
 import { Role } from './roles/roles.model';
+import { UserRoles } from './roles/user-roles.model';
 @Module({
   controllers: [],
   providers: [],
@@ -19,7 +20,7 @@ import { Role } from './roles/roles.model';
       username: 'postgres',
       password: 'root',
       database: 'ru-linkedIn',
-      models: [User, Role],
+      models: [User, Role, UserRoles],
       autoLoadModels: true,
     }),
     UsersModule,

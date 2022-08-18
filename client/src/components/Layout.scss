@@ -5,7 +5,8 @@
   width: fit-content;
 }
 .layout_wrapper {
-  width: 1000px;
+  margin: auto;
+  max-width: 1000px;
   display: grid;
   grid-template-rows: 60px 1fr 50px;
   .layout_wrapper_main {
