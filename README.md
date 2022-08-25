@@ -2,7 +2,7 @@
 
 Для использования приложения нужно его скачать на ваше устройство, зайдя в выбранную вами папку откройте редактор кода, или сделайте это с помощью консоли,  и напишите команду:
 
- `**git clone https://github.com/Slameich-web/ru_linked_in.git**`
+ `git clone https://github.com/Slameich-web/ru_linked_in.git`
 
 ## Запуск приложения (Frontend)
 
