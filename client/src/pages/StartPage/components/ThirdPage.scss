@@ -11,37 +11,35 @@
   background-blend-mode: darken;
   background-image: url('./img/side-view-of-cropped-unrecognizable-business-people-working-at-common-desk.jpg');
   background-size: 100%;
-}
+  .vertical_stick {
+    display: flex;
+    width: 500px;
+    background-color: rgb(240, 234, 234);
+    height: 5px;
+    box-shadow: 1px 1px 2px rgb(53, 54, 54);
+  }
 
-.third_page .vertical_stick {
-  display: flex;
-  width: 500px;
-  background-color: rgb(240, 234, 234);
-  height: 5px;
-  box-shadow: 1px 1px 2px rgb(53, 54, 54);
-}
-
-.third_page span {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  color: aliceblue;
-  text-shadow: 1px 1px 2px rgb(53, 54, 54);
-  font-size: 30px;
+  span {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: aliceblue;
+    text-shadow: 1px 1px 2px rgb(53, 54, 54);
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 900px) {
   .third_page {
     height: 200px;
-  }
+    .vertical_stick {
+      width: 200px;
+      height: 3px;
+    }
 
-  .third_page .vertical_stick {
-    width: 200px;
-    height: 3px;
-  }
-
-  .third_page span {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 10px;
+    span {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 10px;
+    }
   }
 }
