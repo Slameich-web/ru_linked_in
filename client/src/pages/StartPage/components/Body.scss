@@ -1,4 +1,10 @@
 .body_start {
   width: 100%;
-  min-width: 1500px;
+  max-width: 1500px;
+}
+
+@media (max-width: 900px) {
+  .body_start {
+    max-width: 400px;
+  }
 }
