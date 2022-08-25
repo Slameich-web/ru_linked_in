@@ -8,7 +8,7 @@ export const Header = () => {
     <div className='header_start'>
       <span className='logo'>ЛинкедИн для пацанов</span>
       <Link to='Authorization' className='Link'>
-        <button className='logSign'>Войти / Регистрация</button>
+        <button className='log_sign'>Войти / Регистрация</button>
       </Link>
       <Routes>
         <Route path='Authorization' element={<Authorization />} />
