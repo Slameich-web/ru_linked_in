@@ -5,7 +5,7 @@ import { SecondPage } from './SecondPage';
 import { ThirdPage } from './ThirdPage';
 export const Body = () => {
   return (
-    <div className='body_start'>
+    <div className='start_page_body_start'>
       <FirstPage />
       <SecondPage />
       <ThirdPage />
