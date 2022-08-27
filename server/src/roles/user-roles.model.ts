@@ -1,6 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger';
 import {
-  BelongsToMany,
   Column,
   DataType,
   ForeignKey,
