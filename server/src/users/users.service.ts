@@ -15,6 +15,7 @@ export class UsersService {
     const user = await this.userRepository.create(dto);
     const role = await this.roleService.getRoleByValue('USER');
     await user.$set('roles', [role.id]);
+    user.roles = [role];
     return user;
   }
   async getAllUsers() {
