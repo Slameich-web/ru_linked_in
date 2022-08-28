@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { useDispatch } from 'react-redux';
 import { AuthorizationInput } from '../../components/AuthorizationInput/AuthorizationInput';
 import {
@@ -7,7 +7,9 @@ import {
   passwordinputChange,
 } from '../../store/reducers/loginActions';
 
-export const RegistrationInputs = ({ setRepeatePassword }: any) => {
+export const RegistrationInputs = (
+  setRepeatePassword: Dispatch<SetStateAction<string>>
+) => {
   const dispatch = useDispatch();
   const handleInputPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(passwordinputChange(e.target.value));
