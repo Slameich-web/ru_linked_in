@@ -7,8 +7,12 @@ import { RecoverPassword } from './pages/RecoverPassword';
 import { Registration } from './pages/Registration';
 import { StartPage } from './pages/StartPage';
 import { RequireAuth } from './hoc/RequireAuth';
+import axios from 'axios';
 
 const App = () => {
+  const a = axios
+    .get('http://localhost:5000/users')
+    .then((resp) => console.log(resp.data));
   return (
     <div className='App'>
       <Routes>

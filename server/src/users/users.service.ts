@@ -13,11 +13,15 @@ export class UsersService {
   ) {}
 
   async createUser(dto: CreateUserDto) {
-    const user = await this.userRepository.create(dto);
-    const role = await this.roleService.getRoleByValue('USER');
-    await user.$set('roles', [role.id]);
-    user.roles = [role];
-    return user;
+    try {
+      const user = await this.userRepository.create(dto);
+      const role = await this.roleService.getRoleByValue('USER');
+      await user.$set('roles', [role.id]);
+      user.roles = [role];
+      return user;
+    } catch {
+      throw new HttpException('Ошибка сервера', 500);
+    }
   }
   async getAllUsers() {
     const users = await this.userRepository.findAll({ include: { all: true } });
