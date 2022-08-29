@@ -29,6 +29,13 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     restart: always
-
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: slamework@gmail.ru
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - '5050:80'
 volumes:
   pgdata:
