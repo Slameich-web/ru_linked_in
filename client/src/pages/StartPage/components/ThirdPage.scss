@@ -18,7 +18,7 @@
     box-shadow: 1px 1px 2px rgb(53, 54, 54);
   }
 
-  span {
+  .text {
     margin-top: 50px;
     margin-bottom: 50px;
     color: aliceblue;
@@ -36,7 +36,7 @@
       height: 3px;
     }
 
-    span {
+    .text {
       margin-top: 15px;
       margin-bottom: 15px;
       font-size: 25px;
@@ -47,14 +47,8 @@
 @media (max-width: 718px) {
   .third_page {
     height: 300px;
-    .vertical_stick {
-      width: 400px;
-      height: 3px;
-    }
 
-    span {
-      margin-top: 15px;
-      margin-bottom: 15px;
+    .text {
       font-size: 20px;
     }
   }
@@ -68,11 +62,9 @@
       height: 2px;
     }
 
-    span {
-      margin-top: 15px;
-      margin-bottom: 15px;
+    .text {
       font-size: 15px;
-      width: 200px;
+      width: 250px;
     }
   }
 }
@@ -80,16 +72,5 @@
 @media (max-width: 368px) {
   .third_page {
     height: 200px;
-    .vertical_stick {
-      width: 300px;
-      height: 2px;
-    }
-
-    span {
-      margin-top: 15px;
-      margin-bottom: 15px;
-      font-size: 15px;
-      width: 250px;
-    }
   }
 }
