@@ -5,13 +5,12 @@
   align-items: center;
 
   width: 100%;
-  height: 400px;
+  height: 300px;
   top: 0;
   left: 0;
   background-color: rgb(85, 126, 188);
-  min-height: 80px;
 
-  span {
+  .text {
     color: aliceblue;
     margin-top: 20px;
     text-shadow: 1px 1px 2px rgb(53, 54, 54);
@@ -19,14 +18,36 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .footer_start {
     width: 100%;
-    height: 200px;
-    min-height: 80px;
-    span {
+    height: 300px;
+    .text {
       margin-top: 10px;
-      font-size: 10px;
+      font-size: 30px;
     }
+  }
+}
+
+@media (max-width: 718px) {
+  .footer_start {
+    height: 200px;
+    .text {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 512px) {
+  .footer_start {
+    height: 150px;
+    .text {
+      font-size: 15px;
+    }
+  }
+}
+@media (max-width: 512px) {
+  .footer_start {
+    height: 125px;
   }
 }
