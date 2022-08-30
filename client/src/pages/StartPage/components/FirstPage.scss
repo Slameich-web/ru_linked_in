@@ -15,6 +15,7 @@
     font-size: 30px;
   }
   .search_button {
+    font-size: 18px;
     display: flex;
     border: none;
     justify-content: center;
@@ -60,7 +61,7 @@
     .search_button {
       margin-right: 20px;
       border-radius: 30px;
-      font-size: 15px;
+      font-size: 18px;
       align-items: center;
     }
   }
@@ -71,8 +72,9 @@
     height: 300px;
 
     .search_button {
+      font-size: 15px;
       height: 35px;
-      width: 200px;
+      width: 150px;
     }
   }
 }
@@ -88,7 +90,7 @@
       margin-top: 5px;
       font-size: 10px;
       height: 25px;
-      width: 150px;
+      width: 100px;
     }
   }
 }
@@ -99,10 +101,6 @@
 
     .text {
       margin-left: 15px;
-    }
-    .search_button {
-      height: 25px;
-      width: 150px;
     }
   }
 }
