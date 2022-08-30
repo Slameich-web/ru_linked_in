@@ -3,6 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { ChangeIsLoading, LoginError } from '../../store/reducers/loginActions';
+import { $api } from '../../http';
+import { AxiosResponse } from 'axios';
+interface IAuthLogin {
+  token: string;
+}
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
   const { login, password, isLoading } = useTypedSelector(
@@ -23,13 +28,20 @@ export const AuthorizationButtons = () => {
       }, 500);
     };
   };
+  // test todo
+  const Auth = async (
+    email?: string,
+    password?: string
+  ): Promise<AxiosResponse<IAuthLogin>> => {
+    return $api.post<IAuthLogin>('/auth/login', { email, password });
+  };
   return (
     <div>
       <div className='authorization_inside_wrapper_buttons'>
         <button
           disabled={isLoading}
           className='authorization_button_outline'
-          onClick={checkLogin()}
+          onClick={() => Auth(login, password).then((res) => console.log(res))}
         >
           Войти
         </button>
