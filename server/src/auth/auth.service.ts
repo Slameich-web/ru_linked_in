@@ -17,8 +17,16 @@ export class AuthService {
   ) {}
 
   async login(userDto: CreateUserDto) {
-    const user = await this.validateUser(userDto);
-    return this.generateToken(user);
+    try {
+      const user = await this.validateUser(userDto);
+      console.log(user);
+      return this.generateToken(user);
+    } catch (e) {
+      throw new HttpException(
+        'Неверный email или пароль',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
   }
 
   async registration(userDto: CreateUserDto) {

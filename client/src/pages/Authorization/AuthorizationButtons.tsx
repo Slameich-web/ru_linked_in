@@ -14,26 +14,20 @@ export const AuthorizationButtons = () => {
     (state) => state.login
   );
   const navigate = useNavigate();
-  const checkLogin = () => {
-    return () => {
-      dispatch(ChangeIsLoading(true));
-      setTimeout(() => {
-        if (login?.toLowerCase() === 'slame@mail.ru' && password === 'QWERTY') {
-          dispatch({ type: 'ENTER' });
-          navigate('/profile_page');
-        } else {
-          dispatch(LoginError('Ошибка входа'));
-        }
-        dispatch(ChangeIsLoading(false));
-      }, 500);
+  const Auth = (email?: string, password?: string) => {
+    return async () => {
+      try {
+        const response = await $api.post<IAuthLogin>('/auth/login', {
+          email,
+          password,
+        });
+        localStorage.setItem('token', response.data.token);
+        dispatch({ type: 'ENTER' });
+        navigate('/profile_page');
+      } catch (e: any) {
+        dispatch(LoginError(e.response.data.message));
+      }
     };
-  };
-  // test todo
-  const Auth = async (
-    email?: string,
-    password?: string
-  ): Promise<AxiosResponse<IAuthLogin>> => {
-    return $api.post<IAuthLogin>('/auth/login', { email, password });
   };
   return (
     <div>
@@ -41,7 +35,7 @@ export const AuthorizationButtons = () => {
         <button
           disabled={isLoading}
           className='authorization_button_outline'
-          onClick={() => Auth(login, password).then((res) => console.log(res))}
+          onClick={Auth(login, password)}
         >
           Войти
         </button>
