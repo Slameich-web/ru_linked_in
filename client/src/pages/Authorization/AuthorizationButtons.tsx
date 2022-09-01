@@ -3,24 +3,30 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { ChangeIsLoading, LoginError } from '../../store/reducers/loginActions';
+import { $api } from '../../http';
+import { AxiosResponse } from 'axios';
+interface IAuthLogin {
+  token: string;
+}
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
   const { login, password, isLoading } = useTypedSelector(
     (state) => state.login
   );
   const navigate = useNavigate();
-  const checkLogin = () => {
-    return () => {
-      dispatch(ChangeIsLoading(true));
-      setTimeout(() => {
-        if (login?.toLowerCase() === 'slame@mail.ru' && password === 'QWERTY') {
-          dispatch({ type: 'ENTER' });
-          navigate('/profile_page');
-        } else {
-          dispatch(LoginError('Ошибка входа'));
-        }
-        dispatch(ChangeIsLoading(false));
-      }, 500);
+  const Auth = (email?: string, password?: string) => {
+    return async () => {
+      try {
+        const response = await $api.post<IAuthLogin>('/auth/login', {
+          email,
+          password,
+        });
+        localStorage.setItem('token', response.data.token);
+        dispatch({ type: 'ENTER' });
+        navigate('/profile_page');
+      } catch (e: any) {
+        dispatch(LoginError(e.response.data.message));
+      }
     };
   };
   return (
@@ -29,7 +35,7 @@ export const AuthorizationButtons = () => {
         <button
           disabled={isLoading}
           className='authorization_button_outline'
-          onClick={checkLogin()}
+          onClick={Auth(login, password)}
         >
           Войти
         </button>

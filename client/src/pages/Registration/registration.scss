@@ -1,3 +1,9 @@
+@import '../../colors';
+
+.authorization_container {
+  display: flex;
+  justify-content: center;
+}
 .registration_input_wrapper {
   margin-top: 12px;
 }
@@ -10,14 +16,19 @@
   .registration_button_primary {
     height: 40px;
     font-size: 20px;
-    width: 400;
-    border: 1px solid #6083ff;
-    background-color: #6083ff;
+    padding: 0 10px;
+    border: 1px solid $lightBlueColor;
+    background-color: $lightBlueColor;
     color: #fff;
     cursor: pointer;
     transition: 0.5s;
   }
   :hover {
-    background-color: rgb(168, 166, 246);
+    background-color: $lightBlueHover;
+  }
+  .registration_error_message {
+    margin-top: 2px;
+    color: $errorMain;
+    font-size: 14px;
   }
 }

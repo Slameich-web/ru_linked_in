@@ -1,11 +1,13 @@
+@import '../colors';
 .active_custom_link {
-  color: #6083ff;
+  color: $lightBlueColor;
 }
 .custom_link {
   width: fit-content;
 }
 .layout_wrapper {
-  width: 1000px;
+  margin: auto;
+  max-width: 1000px;
   display: grid;
   grid-template-rows: 60px 1fr 50px;
   .layout_wrapper_main {
@@ -21,7 +23,7 @@
   width: 100%;
   max-width: 1000px;
   height: 50px;
-  background: #6083ff;
+  background: $lightBlueColor;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-content: center;

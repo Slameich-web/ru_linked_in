@@ -1,14 +1,21 @@
+@import '../../colors';
+
 .authorization_wrapper_border_error {
-  -webkit-box-shadow: 0px 7px 10px 5px #ff0000;
-  -moz-box-shadow: 0px 7px 10px 5px #ff0000;
-  box-shadow: 0px 7px 10px 5px #ff0000;
+  -webkit-box-shadow: 0px 7px 10px 5px $errorMain;
+  -moz-box-shadow: 0px 7px 10px 5px $errorMain;
+  box-shadow: 0px 7px 10px 5px $errorMain;
 }
 .authorization_wrapper_border {
   -webkit-box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
   -moz-box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
   box-shadow: 0px 7px 10px 5px rgba(96, 131, 255, 0.83);
 }
+.authorization_main_container {
+  display: flex;
+  justify-content: center;
+}
 .authorization_wrapper {
+  margin-top: 50px;
   width: 400px;
   max-height: 600px;
   border-radius: 5px;
@@ -57,32 +64,32 @@
         font-size: 20px;
         width: 400;
         height: 40px;
-        border: 1px solid #6083ff;
+        border: 1px solid $lightBlueColor;
         background-color: #fff;
         transition: 0.5s;
         cursor: pointer;
       }
       :hover {
-        background-color: rgb(168, 166, 246);
+        background-color: $lightBlueHover;
       }
       .authorization_button_primary {
         width: 150px;
         height: 40px;
         font-size: 20px;
         width: 400;
-        border: 1px solid #6083ff;
-        background-color: #6083ff;
+        border: 1px solid $lightBlueColor;
+        background-color: $lightBlueColor;
         color: #fff;
         cursor: pointer;
         transition: 0.5s;
       }
       :hover {
-        background-color: rgb(168, 166, 246);
+        background-color: $lightBlueHover;
       }
     }
     .authorization_error_message {
       margin-top: 2px;
-      color: #ff0000;
+      color: $errorMain;
       font-size: 14px;
     }
     .authorization_social_buttons {
