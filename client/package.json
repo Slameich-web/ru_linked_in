@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "prettier --write ."
   },
   "dependencies": {
     "@types/react-redux": "^7.1.24",
