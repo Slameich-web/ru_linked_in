@@ -1,11 +1,14 @@
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-
 async function start() {
   const PORT = process.env.PORT || 5000;
   const app = await NestFactory.create(AppModule);
-
+  app.enableCors({
+    credentials: true,
+    origin: 'http://localhost:3000',
+  });
   const config = new DocumentBuilder()
     .setTitle('Ru LinkedIn')
     .setDescription('REST API')
@@ -15,7 +18,8 @@ async function start() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/api/docs', app, document);
 
-  await app.listen(PORT, () => console.log('SERVER', PORT));
+  app.useGlobalPipes(new ValidationPipe());
+  await app.listen(PORT, () => console.log('SERVER STARTED', PORT));
 }
 
 start();

@@ -15,7 +15,7 @@ interface UserCreationAttribute {
 
 @Table({ tableName: 'users' })
 export class User extends Model<User, UserCreationAttribute> {
-  @ApiProperty({ example: '1', description: 'Уникальный id' })
+  @ApiProperty({ example: '1', description: 'Уникальный идентификатор' })
   @Column({
     type: DataType.INTEGER,
     unique: true,
@@ -24,19 +24,16 @@ export class User extends Model<User, UserCreationAttribute> {
   })
   id: number;
   @ApiProperty({ example: 'user@mail.ru', description: 'Почтовый адрес' })
-  @Column({
-    type: DataType.STRING,
-    unique: true,
-    allowNull: false,
-  })
+  @Column({ type: DataType.STRING, unique: true, allowNull: false })
   email: string;
-  @ApiProperty({ example: 'qwerty123', description: 'Пароль' })
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
+  @ApiProperty({ example: '12345678', description: 'Пароль' })
+  @Column({ type: DataType.STRING, allowNull: false })
   password: string;
 
+  @ApiProperty({
+    example: `id: 1, value: USER, description: USER`,
+    description: 'Массив ролей',
+  })
   @BelongsToMany(() => Role, () => UserRoles)
   roles: Role[];
 }

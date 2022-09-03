@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Authorization } from './pages/Authorization';
 import { ProfilePage } from './pages/ProfilePage';
@@ -7,8 +7,19 @@ import { RecoverPassword } from './pages/RecoverPassword';
 import { Registration } from './pages/Registration';
 import { StartPage } from './pages/StartPage';
 import { RequireAuth } from './hoc/RequireAuth';
+import { useDispatch } from 'react-redux';
 
 const App = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  // TODO todo ЗАГЛУШКА переделать на нормальную авторизацию через cookie
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      dispatch({ type: 'ENTER' });
+      navigate('/profile_page');
+    }
+  }, []);
   return (
     <div className='App'>
       <Routes>
