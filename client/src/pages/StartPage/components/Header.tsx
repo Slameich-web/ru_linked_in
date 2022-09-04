@@ -8,10 +8,10 @@ export const Header = () => {
     <div className='header_start'>
       <span className='logo'>ЛинкедИн для пацанов</span>
       <div className='buttons_container'>
-        <Link to='Authorization' className='Link'>
+        <Link to='Authorization' className='link'>
           <button className='log_sign'>Войти</button>
         </Link>
-        <Link to='Authorization' className='Link'>
+        <Link to='Authorization' className='link'>
           <button className='log_sign'>Регистрация</button>
         </Link>
       </div>
