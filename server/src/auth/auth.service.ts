@@ -37,8 +37,10 @@ export class AuthService {
       );
     }
     const hashPassword = await bcrypt.hash(userDto.password, 5);
+    const currentEmail = userDto.email.toLowerCase();
     const user = await this.userService.createUser({
       ...userDto,
+      email: currentEmail,
       password: hashPassword,
     });
     return this.generateToken(user);

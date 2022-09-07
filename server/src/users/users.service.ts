@@ -16,9 +16,14 @@ export class UsersService {
     try {
       const user = await this.userRepository.create(dto);
       const role = await this.roleService.getRoleByValue('USER');
-      await user.$set('roles', [role.id]);
-      user.roles = [role];
-      return user;
+      try {
+        await user.$set('roles', [role.id]);
+        user.roles = [role];
+      } catch {
+        throw new HttpException('Нет роли', 503);
+      } finally {
+        return user;
+      }
     } catch {
       throw new HttpException('Ошибка сервера', 500);
     }
