@@ -18,7 +18,7 @@ export const AuthorizationButtons = () => {
     return async () => {
       try {
         const response = await $api.post<IAuthLogin>('/auth/login', {
-          email,
+          email: email?.toLowerCase(),
           password,
         });
         localStorage.setItem('token', response.data.token);
