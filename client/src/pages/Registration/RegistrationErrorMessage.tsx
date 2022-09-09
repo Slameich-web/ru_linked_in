@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import './registration.scss';
 
 export const RegistrationErrorMessage = () => {
   const { errorText } = useTypedSelector((state) => state.login);

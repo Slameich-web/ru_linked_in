@@ -4,7 +4,7 @@ import axios from 'axios';
 import { $api, API_URL } from '../../http';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
+import { LoginError } from '../../store/reducers/loginActions';
 export const RegistrationButton = ({ repeatPassword }: any) => {
   const { password, errorText, email } = useTypedSelector(
     (state) => state.login
@@ -25,8 +25,13 @@ export const RegistrationButton = ({ repeatPassword }: any) => {
         } else {
           throw new Error('Пароли не совпадают');
         }
-      } catch (e) {
-        console.error(e);
+      } catch (e: any) {
+        console.log(e.response);
+        if (e.response) {
+          dispatch(LoginError(e.response.data.message));
+        } else {
+          dispatch(LoginError('Неизвестная ошибка'));
+        }
       }
     };
   }
