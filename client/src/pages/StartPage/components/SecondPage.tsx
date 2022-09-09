@@ -1,6 +1,6 @@
 import './SecondPage.scss';
 import React, { useState, useEffect } from 'react';
-import { $api, API_URL } from 'c:/papasha/ru_linked_in/client/src/http/index';
+import { $api } from '../../../http/index';
 export const SecondPage = () => {
   useEffect(() => {
     async function asyncQuery() {

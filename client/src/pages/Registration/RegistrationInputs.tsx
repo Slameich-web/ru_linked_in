@@ -6,7 +6,13 @@ import {
   passwordinputChange,
 } from '../../store/reducers/loginActions';
 
-export const RegistrationInputs = ({ setrepeatPassword }: any) => {
+export interface RegistrationInputsProps {
+  setRepeatPassword: Dispatch<SetStateAction<string>>;
+}
+
+export const RegistrationInputs = ({
+  setRepeatPassword,
+}: RegistrationInputsProps) => {
   const dispatch = useDispatch();
   const handleInputPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(passwordinputChange(e.target.value));
@@ -15,7 +21,7 @@ export const RegistrationInputs = ({ setrepeatPassword }: any) => {
     dispatch(emailinputChange(e.target.value));
   };
   const handlerepeatPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setrepeatPassword(e.target.value);
+    setRepeatPassword(e.target.value);
   };
   return (
     <>

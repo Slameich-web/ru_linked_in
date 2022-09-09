@@ -2,9 +2,8 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { ChangeIsLoading, LoginError } from '../../store/reducers/loginActions';
+import { LoginError } from '../../store/reducers/loginActions';
 import { $api } from '../../http';
-import { AxiosResponse } from 'axios';
 interface IAuthLogin {
   token: string;
 }

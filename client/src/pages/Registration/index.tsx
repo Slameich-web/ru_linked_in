@@ -6,7 +6,7 @@ import { RegistrationInputs } from './RegistrationInputs';
 import { AuthorizationSocialButtons } from '../Authorization/AuthorizationSocialButtons';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 export const Registration = () => {
-  const [repeatPassword, setrepeatPassword] = useState<string>('');
+  const [repeatPassword, setRepeatPassword] = useState<string>('');
   const { error } = useTypedSelector((state) => state.login);
   return (
     <div className='authorization_container'>
@@ -19,7 +19,7 @@ export const Registration = () => {
       >
         <div className='authorization_inside_wrapper'>
           <div className='authorization_inside_wrapper_title'>Регистрация</div>
-          <RegistrationInputs setrepeatPassword={setrepeatPassword} />
+          <RegistrationInputs setRepeatPassword={setRepeatPassword} />
           <RegistrationErrorMessage />
           <RegistrationButton repeatPassword={repeatPassword} />
           <AuthorizationSocialButtons />

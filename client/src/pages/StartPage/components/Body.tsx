@@ -4,13 +4,13 @@ import './Body.scss';
 import { FirstPage } from './FirstPage';
 import { SecondPage } from './SecondPage';
 import { ThirdPage } from './ThirdPage';
-import { $api } from 'c:/papasha/ru_linked_in/client/src/http/index';
+import { $api } from '../../../http/index';
 export const Body = () => {
   useEffect(() => {
-    async function asyncQuery() {
-      const count = await $api.get<any>('/users/usersCount');
+    async function getUsersCount() {
+      await $api.get<any>('/users/usersCount');
     }
-    asyncQuery();
+    getUsersCount();
   }, []);
   return (
     <div className='start_page_body_start'>
