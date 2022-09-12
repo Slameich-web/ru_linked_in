@@ -1,14 +1,11 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { AuthorizationInput } from '../../components/AuthorizationInput/AuthorizationInput';
 import {
   emailinputChange,
   passwordinputChange,
 } from '../../store/reducers/loginActions';
-
-export interface RegistrationInputsProps {
-  setRepeatPassword: Dispatch<SetStateAction<string>>;
-}
+import { RegistrationInputsProps } from './types';
 
 export const RegistrationInputs = ({
   setRepeatPassword,

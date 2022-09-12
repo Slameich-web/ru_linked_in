@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { LoginError } from '../../store/reducers/loginActions';
 import { $api } from '../../http';
-interface IAuthLogin {
-  token: string;
-}
+import { AxiosError } from 'axios';
+import { IAuthLogin } from './types';
+
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
   const { login, password, isLoading } = useTypedSelector(
@@ -23,8 +23,10 @@ export const AuthorizationButtons = () => {
         localStorage.setItem('token', response.data.token);
         dispatch({ type: 'ENTER' });
         navigate('/profile_page');
-      } catch (e: any) {
-        dispatch(LoginError(e.response.data.message));
+      } catch (e: unknown) {
+        if (e instanceof AxiosError) {
+          dispatch(LoginError(e?.response?.data.message));
+        }
       }
     };
   };
