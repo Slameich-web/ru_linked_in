@@ -2,12 +2,11 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { ChangeIsLoading, LoginError } from '../../store/reducers/loginActions';
+import { LoginError } from '../../store/reducers/loginActions';
 import { $api } from '../../http';
-import { AxiosResponse } from 'axios';
-interface IAuthLogin {
-  token: string;
-}
+import { AxiosError } from 'axios';
+import { IAuthLogin } from './types';
+
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
   const { login, password, isLoading } = useTypedSelector(
@@ -18,14 +17,16 @@ export const AuthorizationButtons = () => {
     return async () => {
       try {
         const response = await $api.post<IAuthLogin>('/auth/login', {
-          email,
+          email: email?.toLowerCase(),
           password,
         });
         localStorage.setItem('token', response.data.token);
         dispatch({ type: 'ENTER' });
         navigate('/profile_page');
-      } catch (e: any) {
-        dispatch(LoginError(e.response.data.message));
+      } catch (e: unknown) {
+        if (e instanceof AxiosError) {
+          dispatch(LoginError(e?.response?.data.message));
+        }
       }
     };
   };

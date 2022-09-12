@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-
-// https://vitejs.dev/config/
+// Сборка через bubel TODO
 export default defineConfig({
   plugins: [react()],
 });

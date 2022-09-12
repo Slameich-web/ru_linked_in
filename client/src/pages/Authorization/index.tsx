@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import './authorization.scss';
 import { AuthorizationButtons } from './AuthorizationButtons';

@@ -1,4 +1,4 @@
-@import '../../colors';
+@import '../../_colors';
 
 .authorization_container {
   display: flex;
@@ -26,9 +26,9 @@
   :hover {
     background-color: $lightBlueHover;
   }
-  .registration_error_message {
-    margin-top: 2px;
-    color: $errorMain;
-    font-size: 14px;
-  }
+}
+.registration_error_message {
+  margin-top: 10px;
+  color: $errorMain;
+  font-size: 14px;
 }
