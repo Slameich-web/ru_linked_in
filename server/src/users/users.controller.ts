@@ -26,7 +26,7 @@ export class UsersController {
     return this.usersService.getAllUsers();
   }
   @ApiOperation({ summary: 'Выдача ролей' })
-  @ApiResponse({ status: 200 })
+  @ApiResponse({ status: 200, type: addRoleDto })
   @Roles('ADMIN')
   @UseGuards(RolesGuard)
   @Post('/addRole')
@@ -34,7 +34,7 @@ export class UsersController {
     return this.usersService.addRole(dto);
   }
   @ApiOperation({ summary: 'Получение колличества пользователей' })
-  @ApiResponse({ status: 200 })
+  @ApiResponse({ status: 200, type: Number })
   @Get('/usersCount')
   usersCount() {
     return this.usersService.getUsersCount();

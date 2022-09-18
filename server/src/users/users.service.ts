@@ -40,7 +40,7 @@ export class UsersService {
     return user;
   }
   async getUsersCount() {
-    const count = await (await this.userRepository.findAndCountAll()).count;
+    const count = (await this.userRepository.findAndCountAll()).count;
     return count;
   }
   async addRole(dto: addRoleDto) {
