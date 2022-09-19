@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Authorization } from './pages/Authorization';
@@ -21,15 +21,15 @@ const App = () => {
     }
   }, []);
   return (
-    <div className='App'>
+    <div className="App">
       <Routes>
-        <Route path='/registration' element={<Registration />} />
-        <Route path='/authorization' element={<Authorization />} />
-        <Route path='/recover_password' element={<RecoverPassword />} />
-        <Route path='/start_page' element={<StartPage />} />
-        <Route path='/' element={<Layout />}>
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/authorization" element={<Authorization />} />
+        <Route path="/recover_password" element={<RecoverPassword />} />
+        <Route path="/start_page" element={<StartPage />} />
+        <Route path="/" element={<Layout />}>
           <Route
-            path='/profile_page'
+            path="/profile_page"
             element={
               <RequireAuth>
                 <ProfilePage />
@@ -37,7 +37,7 @@ const App = () => {
             }
           />
           <Route
-            path='/profile_page/:id'
+            path="/profile_page/:id"
             element={
               <RequireAuth>
                 <ProfilePage />
@@ -45,7 +45,7 @@ const App = () => {
             }
           />
           <Route
-            path='*'
+            path="*"
             element={
               <RequireAuth>
                 <ProfilePage />

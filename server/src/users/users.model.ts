@@ -1,11 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import {
-  Column,
-  DataType,
-  Model,
-  Table,
-  BelongsToMany,
-} from 'sequelize-typescript';
+import { Column, DataType, Model, Table, BelongsToMany } from 'sequelize-typescript';
 import { Role } from '../roles/roles.model';
 import { UserRoles } from '../roles/user-roles.model';
 interface UserCreationAttribute {
@@ -20,7 +14,7 @@ export class User extends Model<User, UserCreationAttribute> {
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true,
+    primaryKey: true
   })
   id: number;
   @ApiProperty({ example: 'user@mail.ru', description: 'Почтовый адрес' })
@@ -32,7 +26,7 @@ export class User extends Model<User, UserCreationAttribute> {
 
   @ApiProperty({
     example: `id: 1, value: USER, description: USER`,
-    description: 'Массив ролей',
+    description: 'Массив ролей'
   })
   @BelongsToMany(() => Role, () => UserRoles)
   roles: Role[];

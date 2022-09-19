@@ -7,7 +7,7 @@ export class addRoleDto {
   readonly value: string;
   @ApiProperty({
     example: '1',
-    description: 'Id пользователя которому будет добавлена новая роль',
+    description: 'Id пользователя которому будет добавлена новая роль'
   })
   @IsNumber({}, { message: 'Должно быть числом' })
   readonly userId: number;

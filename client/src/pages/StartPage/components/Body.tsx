@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect } from 'react';
 import './Body.scss';
 import { FirstPage } from './FirstPage';
@@ -14,7 +13,7 @@ export const Body = () => {
     getUsersCount();
   }, []);
   return (
-    <div className='start_page_body_start'>
+    <div className="start_page_body_start">
       <FirstPage />
       <SecondPage />
       <ThirdPage />

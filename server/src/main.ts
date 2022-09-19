@@ -7,7 +7,7 @@ async function start() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
     credentials: true,
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3000'
   });
   const config = new DocumentBuilder()
     .setTitle('Ru LinkedIn')

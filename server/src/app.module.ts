@@ -13,7 +13,7 @@ import { JwtModule } from '@nestjs/jwt';
   providers: [],
   imports: [
     ConfigModule.forRoot({
-      envFilePath: `.dev.env`,
+      envFilePath: `.dev.env`
     }),
     SequelizeModule.forRoot({
       dialect: 'postgres',
@@ -23,12 +23,12 @@ import { JwtModule } from '@nestjs/jwt';
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
       models: [User, Role, UserRoles],
-      autoLoadModels: true,
+      autoLoadModels: true
     }),
     UsersModule,
     RolesModule,
     AuthModule,
-    JwtModule,
-  ],
+    JwtModule
+  ]
 })
 export class AppModule {}

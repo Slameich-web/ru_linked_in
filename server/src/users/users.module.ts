@@ -11,11 +11,7 @@ import { forwardRef } from '@nestjs/common';
 @Module({
   controllers: [UsersController],
   providers: [UsersService],
-  imports: [
-    SequelizeModule.forFeature([User, Role, UserRoles]),
-    RolesModule,
-    forwardRef(() => AuthModule),
-  ],
-  exports: [UsersService],
+  imports: [SequelizeModule.forFeature([User, Role, UserRoles]), RolesModule, forwardRef(() => AuthModule)],
+  exports: [UsersService]
 })
 export class UsersModule {}

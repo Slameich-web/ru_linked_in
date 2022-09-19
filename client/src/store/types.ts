@@ -25,13 +25,7 @@ export interface ChangeEmailAction {
   type: LoginActionTypes.CHANGE_EMAIL;
   payload: string;
 }
-export type LoginAction =
-  | ChangePasswordAction
-  | EnterAction
-  | ChangeLoginAction
-  | LoginLoading
-  | EnterErrorAction
-  | ChangeEmailAction;
+export type LoginAction = ChangePasswordAction | EnterAction | ChangeLoginAction | LoginLoading | EnterErrorAction | ChangeEmailAction;
 
 export interface initialStateInterface {
   isLogin: boolean;

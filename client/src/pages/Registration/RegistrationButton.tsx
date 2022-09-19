@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { $api } from '../../http';
 import { useNavigate } from 'react-router-dom';
@@ -7,9 +6,7 @@ import { LoginError } from '../../store/reducers/loginActions';
 import { AxiosError, AxiosResponse } from 'axios';
 import { RegistrationButtonProps, RegistrationResponse } from './types';
 
-export const RegistrationButton = ({
-  repeatPassword,
-}: RegistrationButtonProps) => {
+export const RegistrationButton = ({ repeatPassword }: RegistrationButtonProps) => {
   const { password, email } = useTypedSelector((state) => state.login);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -17,13 +14,10 @@ export const RegistrationButton = ({
     return async () => {
       if (repeatPassword === password) {
         try {
-          await $api.post<AxiosResponse<RegistrationResponse>>(
-            '/auth/registration',
-            {
-              email: email.toLowerCase(),
-              password: password,
-            }
-          );
+          await $api.post<AxiosResponse<RegistrationResponse>>('/auth/registration', {
+            email: email.toLowerCase(),
+            password: password
+          });
           navigate('/Authorization');
         } catch (e: unknown) {
           if (e instanceof AxiosError) {
@@ -38,8 +32,8 @@ export const RegistrationButton = ({
     };
   }
   return (
-    <div className='registration_button_wrapper'>
-      <button className='registration_button_primary' onClick={viewData()}>
+    <div className="registration_button_wrapper">
+      <button className="registration_button_primary" onClick={viewData()}>
         Зарегистрироваться
       </button>
     </div>
