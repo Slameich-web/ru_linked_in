@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Roles } from 'src/auth/roles-auth.decorator';
-import { RolesGuard } from 'src/auth/roles.guard';
+import { Roles } from '../auth/roles-auth.decorator';
+import { RolesGuard } from '../auth/roles.guard';
 import { addRoleDto } from './dto/add-role.dto';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './users.model';
@@ -26,11 +26,17 @@ export class UsersController {
     return this.usersService.getAllUsers();
   }
   @ApiOperation({ summary: 'Выдача ролей' })
-  @ApiResponse({ status: 200 })
+  @ApiResponse({ status: 200, type: addRoleDto })
   @Roles('ADMIN')
   @UseGuards(RolesGuard)
   @Post('/addRole')
   addRole(@Body() dto: addRoleDto) {
     return this.usersService.addRole(dto);
+  }
+  @ApiOperation({ summary: 'Получение колличества пользователей' })
+  @ApiResponse({ status: 200, type: Number })
+  @Get('/usersCount')
+  usersCount() {
+    return this.usersService.getUsersCount();
   }
 }

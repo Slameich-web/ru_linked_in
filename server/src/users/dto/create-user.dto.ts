@@ -8,6 +8,8 @@ export class CreateUserDto {
   readonly email: string;
   @ApiProperty({ example: 'qwerty123', description: 'Пароль' })
   @IsString({ message: 'Должно быть строкой' })
-  @Length(4, 20, { message: 'Не меньше 4 не больше 20 ' })
+  @Length(4, 20, {
+    message: 'Пароль должен быть не меньше 4 символов и не больше 20 символов '
+  })
   readonly password: string;
 }

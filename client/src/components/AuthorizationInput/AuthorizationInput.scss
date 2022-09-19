@@ -15,8 +15,7 @@
     font-size: 18px;
   }
   :focus {
-    box-shadow: 0px 1px 0px $lightBlueColor, 0px -1px 0px $lightBlueColor,
-      1px 0px 0px $lightBlueColor, -1px 0px 0px $lightBlueColor;
+    box-shadow: 0px 1px 0px $lightBlueColor, 0px -1px 0px $lightBlueColor, 1px 0px 0px $lightBlueColor, -1px 0px 0px $lightBlueColor;
   }
   .authorization_input_border_error {
     border-bottom: 2px solid $errorMain;

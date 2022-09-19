@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useMatch } from 'react-router-dom';
 
 export interface CustomLinkProps {
@@ -8,24 +7,11 @@ export interface CustomLinkProps {
   props?: any;
 }
 
-export const CustomLink = ({
-  children,
-  to,
-  className,
-  ...props
-}: CustomLinkProps) => {
+export const CustomLink = ({ children, to, className, ...props }: CustomLinkProps) => {
   const match = useMatch(to);
   const classNames = className ? className : '';
   return (
-    <Link
-      className={
-        match
-          ? `custom_link active_custom_link ${classNames}`
-          : `custom_link ${classNames}`
-      }
-      to={to}
-      {...props}
-    >
+    <Link className={match ? `custom_link active_custom_link ${classNames}` : `custom_link ${classNames}`} to={to} {...props}>
       {children}
     </Link>
   );

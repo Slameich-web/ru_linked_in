@@ -1,24 +1,26 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { RolesService } from 'src/roles/roles.service';
+import { RolesService } from '../roles/roles.service';
 import { addRoleDto } from './dto/add-role.dto';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './users.model';
 
 @Injectable()
 export class UsersService {
-  constructor(
-    @InjectModel(User) private userRepository: typeof User,
-    private roleService: RolesService,
-  ) {}
+  constructor(@InjectModel(User) private userRepository: typeof User, private roleService: RolesService) {}
 
   async createUser(dto: CreateUserDto) {
     try {
       const user = await this.userRepository.create(dto);
       const role = await this.roleService.getRoleByValue('USER');
-      await user.$set('roles', [role.id]);
-      user.roles = [role];
-      return user;
+      try {
+        await user.$set('roles', [role.id]);
+        user.roles = [role];
+      } catch {
+        throw new HttpException('Нет роли', 503);
+      } finally {
+        return user;
+      }
     } catch {
       throw new HttpException('Ошибка сервера', 500);
     }
@@ -30,9 +32,13 @@ export class UsersService {
   async getUserByEmail(email: string) {
     const user = await this.userRepository.findOne({
       where: { email },
-      include: { all: true },
+      include: { all: true }
     });
     return user;
+  }
+  async getUsersCount() {
+    const count = (await this.userRepository.findAndCountAll()).count;
+    return count;
   }
   async addRole(dto: addRoleDto) {
     const user = await this.userRepository.findByPk(dto.userId);
@@ -41,9 +47,6 @@ export class UsersService {
       await user.$add('role', role.id);
       return dto;
     }
-    throw new HttpException(
-      'Пользователь или роль не найдена',
-      HttpStatus.NOT_FOUND,
-    );
+    throw new HttpException('Пользователь или роль не найдена', HttpStatus.NOT_FOUND);
   }
 }
