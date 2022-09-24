@@ -1,8 +1,8 @@
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { $api } from '../../http';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { LoginError } from '../../store/reducers/loginActions';
+import { CancelError, LoginError } from '../../store/reducers/loginActions';
 import { AxiosError, AxiosResponse } from 'axios';
 import { RegistrationButtonProps, RegistrationResponse } from './types';
 
@@ -20,6 +20,7 @@ export const RegistrationButton = ({ repeatPassword }: RegistrationButtonProps) 
           });
           navigate('/Authorization');
         } catch (e: unknown) {
+          dispatch(LoginError('Ошибка сервера'));
           if (e instanceof AxiosError) {
             dispatch(LoginError(e?.response?.data.message));
           } else {
@@ -33,6 +34,11 @@ export const RegistrationButton = ({ repeatPassword }: RegistrationButtonProps) 
   }
   return (
     <div className="registration_button_wrapper">
+      <Link className="authorization_button_link" to="/authorization">
+        <button onClick={() => dispatch(CancelError())} className="registration_button_outline">
+          &#8656;
+        </button>
+      </Link>
       <button className="registration_button_primary" onClick={viewData()}>
         Зарегистрироваться
       </button>
