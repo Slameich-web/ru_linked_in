@@ -23,6 +23,14 @@ export const loginReducer = (state = initialState, action: LoginAction): initial
         error: true,
         errorText: action.payload
       };
+    case LoginActionTypes.CANCEL_ERROR:
+      return {
+        ...state,
+        isLogin: false,
+        isLoading: false,
+        errorText: '',
+        error: false
+      };
     case LoginActionTypes.CHANGE_LOGIN:
       return { ...state, login: action.payload };
     case LoginActionTypes.CHANGE_PASSWORD:

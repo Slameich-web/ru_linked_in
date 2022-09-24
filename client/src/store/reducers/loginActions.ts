@@ -11,6 +11,9 @@ export const RegistrationError = (error: string) => ({
   type: LoginActionTypes.ENTER_ERROR,
   payload: error
 });
+export const CancelError = () => ({
+  type: LoginActionTypes.CANCEL_ERROR
+});
 export const ChangeIsLoading = (isLoading: boolean) => ({
   type: LoginActionTypes.LOGIN_LOADING,
   payload: isLoading

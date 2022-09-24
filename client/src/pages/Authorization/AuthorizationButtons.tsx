@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { LoginError } from '../../store/reducers/loginActions';
+import { CancelError, LoginError } from '../../store/reducers/loginActions';
 import { $api } from '../../http';
 import { AxiosError } from 'axios';
 import { IAuthLogin } from './types';
@@ -21,7 +21,8 @@ export const AuthorizationButtons = () => {
         dispatch({ type: 'ENTER' });
         navigate('/profile_page');
       } catch (e: unknown) {
-        if (e instanceof AxiosError) {
+        dispatch(LoginError('Ошибка сервера'));
+        if (e instanceof AxiosError && e.response?.data.message) {
           dispatch(LoginError(e?.response?.data.message));
         }
       }
@@ -34,7 +35,7 @@ export const AuthorizationButtons = () => {
           Войти
         </button>
         <Link className="authorization_button_link" to="/registration">
-          <button disabled={isLoading} className="authorization_button_primary">
+          <button onClick={() => dispatch(CancelError())} disabled={isLoading} className="authorization_button_primary">
             Регистрация
           </button>
         </Link>
