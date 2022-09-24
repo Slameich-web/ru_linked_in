@@ -1,0 +1,20 @@
+.article_placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.article_placeholder__basic {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 100px;
+  width: 1000px;
+  height: 200px;
+  background-color: rgb(85, 126, 188);
+  color: aliceblue;
+  text-shadow: 1px 1px 2px rgb(53, 54, 54);
+  font-size: 30px;
+  box-shadow: 0px 0px 1px black;
+}

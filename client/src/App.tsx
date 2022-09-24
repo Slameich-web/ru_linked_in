@@ -8,7 +8,7 @@ import { Registration } from './pages/Registration';
 import { StartPage } from './pages/StartPage';
 import { RequireAuth } from './hoc/RequireAuth';
 import { useDispatch } from 'react-redux';
-
+import { Article } from './pages/Article';
 const App = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -27,6 +27,7 @@ const App = () => {
         <Route path='/authorization' element={<Authorization />} />
         <Route path='/recover_password' element={<RecoverPassword />} />
         <Route path='/start_page' element={<StartPage />} />
+        <Route path='/article' element={<Article />} />
         <Route path='/' element={<Layout />}>
           <Route
             path='/profile_page'
