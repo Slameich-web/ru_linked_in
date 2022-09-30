@@ -16,4 +16,15 @@
     font-size: 30px;
     margin-left: 100px;
   }
+  .article_header_link {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 20px 0px;
+    line-height: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .article_header_link:hover {
+    text-shadow: 0px 0px 1px rgb(174, 174, 174);
+  }
 }

@@ -1,9 +1,8 @@
 import React from 'react';
 import { RequireAuth } from '../../../hoc/RequireAuth';
-import './Article_footer.scss';
-import '../Article_placeholder.scss';
+import './Article_placeholder.scss';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 export const ArcticlePlaceholder = ({
   children,
   title,
@@ -12,6 +11,7 @@ export const ArcticlePlaceholder = ({
   likes,
   views,
   text,
+  description,
 }: any) => {
   const [isLiked, setIsLiked] = useState<boolean>(true);
   const [likeCount, setLikeCount] = useState<number>(likes);
@@ -24,10 +24,14 @@ export const ArcticlePlaceholder = ({
   return (
     <div className='article_placeholder__basic'>
       <div>
-        <span>{title}</span>
+        <span className='title'>
+          <Link to='/article_text' className='link'>
+            {title}
+          </Link>
+        </span>
       </div>
       <div>
-        <span className='article_content'>{text}</span>
+        <span className='article_content'>{description}</span>
       </div>
       <div className='article_footer'>
         <span className='article_footer_text'>Автор: {author}</span>

@@ -1,28 +1,28 @@
 import React from 'react';
 import { ArcticlePlaceholder } from './components/Article_placeholder';
-import './Article_placeholder.scss';
+import './components/Article_placeholder.scss';
 import './index.scss';
 import { ArticleHeader } from './components/Header';
 import { useState } from 'react';
 
 const dataForArticle: any = [
   {
-    title: 'First title',
-    description: '30',
+    title: 'Статья 1',
+    description: 'Статья номер1',
     image: '30',
     likes: 30,
   },
   {
-    title: '30',
-    description: '30',
+    title: 'Статья 2',
+    description: 'Как первая, только вторая',
     image: '30',
-    likes: 30,
+    likes: 50,
   },
   {
-    title: '30',
-    description: '30',
+    title: 'Статья 3',
+    description: 'Уже третья статья!',
     image: '30',
-    likes: 30,
+    likes: 24,
   },
 ];
 
