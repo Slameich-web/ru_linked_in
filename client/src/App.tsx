@@ -8,6 +8,8 @@ import { Registration } from './pages/Registration';
 import { StartPage } from './pages/StartPage';
 import { RequireAuth } from './hoc/RequireAuth';
 import { useDispatch } from 'react-redux';
+import { Article } from './pages/Article';
+import { ArticleText } from './pages/Article/components/ArticleText';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -19,15 +21,17 @@ const App = () => {
       dispatch({ type: 'ENTER' });
       navigate('/profile_page');
     }
-  }, []);
+  }, [navigate]);
   return (
     <div className="App">
       <Routes>
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/authorization" element={<Authorization />} />
-        <Route path="/recover_password" element={<RecoverPassword />} />
-        <Route path="/start_page" element={<StartPage />} />
-        <Route path="/" element={<Layout />}>
+        <Route path='/registration' element={<Registration />} />
+        <Route path='/authorization' element={<Authorization />} />
+        <Route path='/recover_password' element={<RecoverPassword />} />
+        <Route path='/start_page' element={<StartPage />} />
+        <Route path='/article' element={<Article />} />
+        <Route path='/article_text' element={<ArticleText />} />
+        <Route path='/' element={<Layout />}>
           <Route
             path="/profile_page"
             element={

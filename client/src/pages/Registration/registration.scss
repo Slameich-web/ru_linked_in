@@ -11,7 +11,21 @@
 .registration_button_wrapper {
   margin-top: 24px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+
+  .registration_button_outline {
+    width: 50px;
+    font-size: 30px;
+    width: 400;
+    height: 40px;
+    border: 1px solid $lightBlueColor;
+    background-color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  :hover {
+    background-color: $lightBlueHover;
+  }
 
   .registration_button_primary {
     height: 40px;

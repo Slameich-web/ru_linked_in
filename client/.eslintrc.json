@@ -19,7 +19,7 @@
     "no-console": 1,
     "no-alert": "warn",
     "no-var": "error",
-    "printWidth": 140,
+    "printWidth": 120,
     "tabWidth": 2,
     "useTabs": false,
     "singleQuote": true,

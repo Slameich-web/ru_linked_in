@@ -1,18 +1,10 @@
 import './SecondPage.scss';
 import { useState, useEffect } from 'react';
-import { $api } from '../../../http/index';
+import { getCountRegisterUsers } from '../startPageFunctions';
+
 export const SecondPage = () => {
   useEffect(() => {
-    async function asyncQuery() {
-      try {
-        const { data } = await $api.get('/users/usersCount');
-        setNumber(data);
-        setIsError(false);
-      } catch {
-        setIsError(true);
-      }
-    }
-    asyncQuery();
+    getCountRegisterUsers(setNumber, setIsError);
   }, []);
 
   const [Number, setNumber] = useState<number>(0);
