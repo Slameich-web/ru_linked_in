@@ -8,13 +8,13 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @ApiOperation({ summary: 'Авторизация' })
-  @ApiResponse({ status: 200 })
+  @ApiResponse({ status: 200, type: String })
   @Post('/login')
   login(@Body() userDto: CreateUserDto) {
     return this.authService.login(userDto);
   }
   @ApiOperation({ summary: 'Регистрация' })
-  @ApiResponse({ status: 200 })
+  @ApiResponse({ status: 200, type: String })
   @Post('/registration')
   registration(@Body() userDto: CreateUserDto) {
     return this.authService.registration(userDto);

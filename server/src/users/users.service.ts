@@ -7,10 +7,7 @@ import { User } from './users.model';
 
 @Injectable()
 export class UsersService {
-  constructor(
-    @InjectModel(User) private userRepository: typeof User,
-    private roleService: RolesService,
-  ) {}
+  constructor(@InjectModel(User) private userRepository: typeof User, private roleService: RolesService) {}
 
   async createUser(dto: CreateUserDto) {
     try {
@@ -35,12 +32,12 @@ export class UsersService {
   async getUserByEmail(email: string) {
     const user = await this.userRepository.findOne({
       where: { email },
-      include: { all: true },
+      include: { all: true }
     });
     return user;
   }
   async getUsersCount() {
-    const count = await (await this.userRepository.findAndCountAll()).count;
+    const count = (await this.userRepository.findAndCountAll()).count;
     return count;
   }
   async addRole(dto: addRoleDto) {
@@ -50,9 +47,6 @@ export class UsersService {
       await user.$add('role', role.id);
       return dto;
     }
-    throw new HttpException(
-      'Пользователь или роль не найдена',
-      HttpStatus.NOT_FOUND,
-    );
+    throw new HttpException('Пользователь или роль не найдена', HttpStatus.NOT_FOUND);
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Authorization } from './pages/Authorization';
@@ -10,6 +10,7 @@ import { RequireAuth } from './hoc/RequireAuth';
 import { useDispatch } from 'react-redux';
 import { Article } from './pages/Article';
 import { ArticleText } from './pages/Article/components/ArticleText';
+
 const App = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,9 +21,9 @@ const App = () => {
       dispatch({ type: 'ENTER' });
       navigate('/profile_page');
     }
-  }, []);
+  }, [navigate]);
   return (
-    <div className='App'>
+    <div className="App">
       <Routes>
         <Route path='/registration' element={<Registration />} />
         <Route path='/authorization' element={<Authorization />} />
@@ -32,7 +33,7 @@ const App = () => {
         <Route path='/article_text' element={<ArticleText />} />
         <Route path='/' element={<Layout />}>
           <Route
-            path='/profile_page'
+            path="/profile_page"
             element={
               <RequireAuth>
                 <ProfilePage />
@@ -40,7 +41,7 @@ const App = () => {
             }
           />
           <Route
-            path='/profile_page/:id'
+            path="/profile_page/:id"
             element={
               <RequireAuth>
                 <ProfilePage />
@@ -48,7 +49,7 @@ const App = () => {
             }
           />
           <Route
-            path='*'
+            path="*"
             element={
               <RequireAuth>
                 <ProfilePage />

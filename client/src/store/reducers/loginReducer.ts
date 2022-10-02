@@ -8,13 +8,10 @@ const initialState: initialStateInterface = {
   password: '',
   error: false,
   isLoading: false,
-  errorText: '',
+  errorText: ''
 };
 
-export const loginReducer = (
-  state = initialState,
-  action: LoginAction
-): initialStateInterface => {
+export const loginReducer = (state = initialState, action: LoginAction): initialStateInterface => {
   switch (action.type) {
     case LoginActionTypes.ENTER:
       return { ...state, isLogin: true, isLoading: false, error: false };
@@ -24,7 +21,15 @@ export const loginReducer = (
         isLogin: false,
         isLoading: false,
         error: true,
-        errorText: action.payload,
+        errorText: action.payload
+      };
+    case LoginActionTypes.CANCEL_ERROR:
+      return {
+        ...state,
+        isLogin: false,
+        isLoading: false,
+        errorText: '',
+        error: false
       };
     case LoginActionTypes.CHANGE_LOGIN:
       return { ...state, login: action.payload };

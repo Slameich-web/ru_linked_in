@@ -3,12 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -23,6 +18,24 @@
     "react/prop-types": 2,
     "no-console": 1,
     "no-alert": "warn",
-    "no-var": "error"
+    "no-var": "error",
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "jsxSingleQuote": false,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "arrowParens": "always",
+    "rangeStart": 0,
+    "requirePragma": false,
+    "insertPragma": false,
+    "proseWrap": "preserve",
+    "htmlWhitespaceSensitivity": "css",
+    "vueIndentScriptAndStyle": true,
+    "endOfLine": "lf",
+    "embeddedLanguageFormatting": "auto"
   }
 }
