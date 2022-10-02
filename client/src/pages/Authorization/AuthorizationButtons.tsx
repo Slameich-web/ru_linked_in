@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { CancelError } from '../../store/reducers/loginActions';
 import { Auth } from './AuthorizationFunctions';
+import { cancelError } from '../Registration/RegistrationFunctions';
 
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ export const AuthorizationButtons = () => {
           Войти
         </button>
         <Link className="authorization_button_link" to="/registration">
-          <button onClick={() => dispatch(CancelError())} disabled={isLoading} className="authorization_button_primary">
+          <button onClick={cancelError(dispatch)} disabled={isLoading} className="authorization_button_primary">
             Регистрация
           </button>
         </Link>

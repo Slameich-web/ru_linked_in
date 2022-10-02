@@ -10,8 +10,8 @@ export function Registration(
   navigate: NavigateFunction,
   dispatch: Dispatch<AnyAction>,
   email: string,
-  password?: string,
-  repeatPassword?: string
+  repeatPassword: string,
+  password?: string
 ) {
   return async () => {
     dispatch(CancelError());
@@ -35,3 +35,6 @@ export function Registration(
     }
   };
 }
+export const cancelError = (dispatch: Dispatch<AnyAction>) => {
+  return () => dispatch(CancelError());
+};
