@@ -8,6 +8,8 @@ import { Registration } from './pages/Registration';
 import { StartPage } from './pages/StartPage';
 import { RequireAuth } from './hoc/RequireAuth';
 import { useDispatch } from 'react-redux';
+import { Article } from './pages/Article';
+import { ArticleText } from './pages/Article/components/ArticleText';
 
 const App = () => {
   const dispatch = useDispatch();
