@@ -19,7 +19,7 @@ const App = () => {
       dispatch({ type: 'ENTER' });
       navigate('/profile_page');
     }
-  }, []);
+  }, [navigate]);
   return (
     <div className="App">
       <Routes>
