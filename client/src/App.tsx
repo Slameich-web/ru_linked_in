@@ -27,6 +27,8 @@ const App = () => {
         <Route path="/authorization" element={<Authorization />} />
         <Route path="/recover_password" element={<RecoverPassword />} />
         <Route path="/start_page" element={<StartPage />} />
+        <Route path="/article" element={<Article />} />
+        <Route path="/article_text" element={<ArticleText />} />
         <Route path="/" element={<Layout />}>
           <Route
             path="/profile_page"
