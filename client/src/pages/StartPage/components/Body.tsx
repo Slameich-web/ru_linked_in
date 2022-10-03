@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import './Body.scss';
 import { FirstPage } from './FirstPage';
 import { SecondPage } from './SecondPage';
 import { ThirdPage } from './ThirdPage';

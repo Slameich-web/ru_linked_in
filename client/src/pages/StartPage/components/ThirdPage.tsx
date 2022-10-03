@@ -1,4 +1,3 @@
-import './ThirdPage.scss';
 export const ThirdPage = () => {
   return (
     <div className="third_page">
