@@ -2,14 +2,22 @@ import React from 'react';
 import { RequireAuth } from '../../../hoc/RequireAuth';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+const arrow = (clickFunction: any) => {
+  return () => {
+    clickFunction();
+  };
+};
 export const ArcticlePlaceholder = ({ children, title, style, author, likes, views, text, description }: any) => {
   const [isLiked, setIsLiked] = useState<boolean>(true);
   const [likeCount, setLikeCount] = useState<number>(likes);
+  const activeClass = isLiked ? 'heart_inactive' : 'heart_active';
   const likeClick = () => {
-    return setIsLiked(false), setLikeCount(likeCount + 1);
+    setIsLiked(false);
+    setLikeCount(likeCount + 1);
   };
   const likeClickToInactive = () => {
-    return setIsLiked(true), setLikeCount(likeCount - 1);
+    setIsLiked(true);
+    setLikeCount(likeCount - 1);
   };
   return (
     <div className="article_placeholder__basic">
@@ -27,10 +35,7 @@ export const ArcticlePlaceholder = ({ children, title, style, author, likes, vie
         <span className="article_footer_text">Автор: {author}</span>
         <div className="article_footer_views_and_likes_container">
           <span className="article_footer_like_count">
-            <span
-              className={isLiked ? 'heart_inactive' : 'heart_active'}
-              onClick={isLiked ? () => likeClick() : () => likeClickToInactive()}
-            >
+            <span className={activeClass} onClick={isLiked ? arrow(likeClick) : arrow(likeClickToInactive)}>
               &hearts;
             </span>{' '}
             Лайки: {likeCount}
