@@ -1,5 +1,3 @@
-import './FirstPage.scss';
-
 export const FirstPage = () => {
   return (
     <div className="first_page">

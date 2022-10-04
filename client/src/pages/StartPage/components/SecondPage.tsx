@@ -1,4 +1,3 @@
-import './SecondPage.scss';
 import { useState, useEffect } from 'react';
 import { getCountRegisterUsers } from '../startPageFunctions';
 
