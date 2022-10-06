@@ -1,0 +1,114 @@
+.article_body {
+  background-color: whitesmoke;
+  .article_footer {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-self: baseline;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 0px black;
+    .article_footer_text {
+      margin-left: 20px;
+    }
+    .article_footer_views_and_likes_container {
+      display: flex;
+      margin-right: 50px;
+      width: 350px;
+      justify-content: space-between;
+    }
+
+    .article_img {
+      height: 20px;
+      width: 20px;
+    }
+    .heart_inactive {
+      color: gray;
+      cursor: pointer;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      user-select: none;
+    }
+    .heart_inactive:hover {
+      color: red;
+    }
+    .heart_active {
+      color: red;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+  .title {
+    font-size: larger;
+  }
+  .link {
+    text-decoration: none;
+    color: black;
+    padding: 20px 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .link:hover {
+    color: #5265f6;
+  }
+  .article_placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .article_placeholder__basic {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 100px;
+    width: 1000px;
+    height: 200px;
+    background-color: rgb(211, 217, 225);
+    color: rgb(35, 36, 37);
+    font-size: 30px;
+  }
+}
+.article_text_page {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.description {
+  border-bottom: 5px solid rgb(85, 126, 188);
+}
+.article_header {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(85, 126, 188);
+  border-bottom: 3px;
+  border-color: black;
+  .article_logo {
+    display: flex;
+    color: aliceblue;
+    text-shadow: 1px 1px 2px rgb(53, 54, 54);
+    align-items: center;
+    width: 600px;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    font-size: 30px;
+    margin-left: 100px;
+  }
+  .article_header_link {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 20px 0px;
+    line-height: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .article_header_link:hover {
+    text-shadow: 0px 0px 1px rgb(174, 174, 174);
+  }
+}
