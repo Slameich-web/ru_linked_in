@@ -8,7 +8,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { Helmet } from 'react-helmet';
 export const Registration = () => {
   const [repeatPassword, setRepeatPassword] = useState<string>('');
-  const { error } = useTypedSelector((state) => state.login);
+  const { error } = useTypedSelector(({ login }) => login);
   return (
     <div className="authorization_container">
       <Helmet>

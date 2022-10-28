@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArticleHeader } from './Header';
 export const ArticleText = ({ children, text, title, description }: any) => {
   return (

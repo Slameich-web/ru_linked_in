@@ -1,13 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { CancelError } from '../../store/reducers/loginActions';
 import { Auth } from './AuthorizationFunctions';
 import { cancelError } from '../Registration/RegistrationFunctions';
 
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
-  const { login, password, isLoading } = useTypedSelector((state) => state.login);
+  const { login, password, isLoading } = useTypedSelector(({ login }) => login);
   const navigate = useNavigate();
   return (
     <div>

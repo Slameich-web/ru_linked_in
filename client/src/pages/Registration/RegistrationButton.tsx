@@ -1,12 +1,11 @@
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { CancelError } from '../../store/reducers/loginActions';
 import { RegistrationButtonProps } from './types';
 import { cancelError, Registration } from './RegistrationFunctions';
 
 export const RegistrationButton = ({ repeatPassword }: RegistrationButtonProps) => {
-  const { password, email } = useTypedSelector((state) => state.login);
+  const { password, email } = useTypedSelector(({ login }) => login);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
