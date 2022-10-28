@@ -1,7 +1,6 @@
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { CancelError } from '../../store/reducers/loginActions';
 import { RegistrationButtonProps } from './types';
 import { cancelError, Registration } from './RegistrationFunctions';
 

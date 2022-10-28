@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import './authorization.scss';
@@ -6,7 +5,7 @@ import { AuthorizationButtons } from './AuthorizationButtons';
 import { AuthorizationInputs } from './AuthorizationInputs';
 import { AuthorizationSocialButtons } from './AuthorizationSocialButtons';
 
-export const Authorization: FC = () => {
+export const Authorization = () => {
   const { error } = useTypedSelector(({ login }) => login);
   return (
     <div className="authorization_main_container">

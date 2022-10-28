@@ -1,8 +1,6 @@
-import React from 'react';
 import { ArcticlePlaceholder } from './components/ArticlePlaceholder';
 import './Article.scss';
 import { ArticleHeader } from './components/Header';
-import { useState } from 'react';
 
 const dataForArticle = [
   {
@@ -33,15 +31,15 @@ export const Article = () => {
     <div className="article_body">
       <ArticleHeader />
       <div className="article_placeholder">
-        {dataForArticle.map((item, index) => {
+        {dataForArticle.map(({ title, description, image, likes, author }, index) => {
           return (
             <ArcticlePlaceholder
               key={index}
-              title={item.title}
-              description={item.description}
-              image={item.image}
-              likes={item.likes}
-              author={item.author}
+              title={title}
+              description={description}
+              image={image}
+              likes={likes}
+              author={author}
             />
           );
         })}

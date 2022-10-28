@@ -2,7 +2,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { AuthorizationInputProps } from '../../store/types';
 import './AuthorizationInput.scss';
 export const AuthorizationInput = ({ title, handler, type }: AuthorizationInputProps) => {
-  const { error } = useTypedSelector((state) => state.login);
+  const { error } = useTypedSelector(({ login }) => login);
   return (
     <div className="authorization_input_wrapper">
       <div className="authorization_input_title">{title}</div>

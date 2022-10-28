@@ -1,9 +1,8 @@
 import { useLocation, Navigate } from 'react-router-dom';
 import { ReactNode } from 'react';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-export interface RequireAuthProps {
-  children: ReactNode;
-}
+import { RequireAuthProps } from './types';
+
 export const RequireAuth = ({ children }: RequireAuthProps): any => {
   const location = useLocation();
   const { isLogin } = useTypedSelector((state) => state.login);
