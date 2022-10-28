@@ -7,7 +7,7 @@ import { cancelError } from '../Registration/RegistrationFunctions';
 
 export const AuthorizationButtons = () => {
   const dispatch = useDispatch();
-  const { login, password, isLoading } = useTypedSelector((state) => state.login);
+  const { login, password, isLoading } = useTypedSelector(({ login }) => login);
   const navigate = useNavigate();
   return (
     <div>

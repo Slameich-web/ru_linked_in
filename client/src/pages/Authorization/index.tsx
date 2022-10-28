@@ -7,7 +7,7 @@ import { AuthorizationInputs } from './AuthorizationInputs';
 import { AuthorizationSocialButtons } from './AuthorizationSocialButtons';
 
 export const Authorization: FC = () => {
-  const { error } = useTypedSelector((state) => state.login);
+  const { error } = useTypedSelector(({ login }) => login);
   return (
     <div className="authorization_main_container">
       <Helmet>

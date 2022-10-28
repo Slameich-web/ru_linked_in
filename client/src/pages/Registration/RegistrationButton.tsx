@@ -6,7 +6,7 @@ import { RegistrationButtonProps } from './types';
 import { cancelError, Registration } from './RegistrationFunctions';
 
 export const RegistrationButton = ({ repeatPassword }: RegistrationButtonProps) => {
-  const { password, email } = useTypedSelector((state) => state.login);
+  const { password, email } = useTypedSelector(({ login }) => login);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
