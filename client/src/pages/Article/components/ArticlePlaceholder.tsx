@@ -2,12 +2,20 @@ import React from 'react';
 import { RequireAuth } from '../../../hoc/RequireAuth';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-const arrow = (clickFunction: any) => {
+
+interface ArticleProps {
+  title: string;
+  author?: string;
+  likes: number;
+  description: string;
+  image: string;
+}
+const arrow = (clickFunction: { (): void }) => {
   return () => {
     clickFunction();
   };
 };
-export const ArcticlePlaceholder = ({ children, title, style, author, likes, views, text, description }: any) => {
+export const ArcticlePlaceholder: React.FC<ArticleProps> = ({ title, author, likes, views, description }: any) => {
   const [isLiked, setIsLiked] = useState<boolean>(true);
   const [likeCount, setLikeCount] = useState<number>(likes);
   const activeClass = isLiked ? 'heart_inactive' : 'heart_active';
